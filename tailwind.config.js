@@ -3,7 +3,13 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gray: {
+          light: "#d3d3d3",
+        },
+      },
+    },
   },
   plugins: [],
 };
