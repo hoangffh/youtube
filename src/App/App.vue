@@ -1,8 +1,6 @@
 <template>
-  <div class="box-border w-full h-full m-0 p-0 bg-white">
-    <div class="grid">
+  <div class="box-border w-full h-full m-0 p-0 bg-white px-4">
       <HeaderYoutobe></HeaderYoutobe>
-    </div>
   </div>
 </template>
 <script setup>
