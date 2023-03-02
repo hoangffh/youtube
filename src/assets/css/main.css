@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Youtube Bold;
+    src: url("../font/youtube-sans-bold.ttf");
+}
+@font-face {
+    font-family: Youtube light;
+    src: url("../font/youtube-sans-light.ttf");
+}
+@font-face {
+    font-family: Youtube medium;
+    src: url("../font/youtube-sans-medium.ttf");
+}
