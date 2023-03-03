@@ -1,16 +1,44 @@
 <template>
   <div
-    class="max-h-[calc(100vh - 56px)] overflow-y-auto px-6 flex flex-col items-center w-[204px]"
+    class="max-h-[calc(100vh-70px)] overflow-y-scroll flex flex-col items-center w-[224px] pl-2 pr-4 scrollbox"
   >
-    <div class="w-full" v-for="item in listSideBar" :key="item">
+    <div
+      class="w-full px-4 hover:rounded-md hover:bg-slate-200 hover:font-bold cursor-pointer"
+      v-for="item in listSideBar"
+      :key="item"
+    >
       <BaseIItemSIdebar :item="item"></BaseIItemSIdebar>
     </div>
   </div>
 </template>
 <script setup>
 import BaseIItemSIdebar from "@/components/Base/BaseIItemSIdebar.vue";
-import { IconHome } from "@/assets/icon/index";
+import IconHome from "@/assets/icon/IconHome.svg";
 const listSideBar = [
+  {
+    Icon: IconHome,
+    title: "Trang chủ",
+  },
+  {
+    Icon: IconHome,
+    title: "Shorts",
+  },
+  {
+    Icon: IconHome,
+    title: "Trang chủ",
+  },
+  {
+    Icon: IconHome,
+    title: "Trang chủ",
+  },
+  {
+    Icon: IconHome,
+    title: "Shorts",
+  },
+  {
+    Icon: IconHome,
+    title: "Trang chủ",
+  },
   {
     Icon: IconHome,
     title: "Trang chủ",
@@ -33,7 +61,7 @@ const listSideBar = [
   },
   {
     Icon: IconHome,
-    title: "Trang chủ",
+    title: "Shorts",
   },
   {
     Icon: IconHome,
@@ -45,11 +73,7 @@ const listSideBar = [
   },
   {
     Icon: IconHome,
-    title: "Trang chủ",
-  },
-  {
-    Icon: IconHome,
-    title: "Trang chủ",
+    title: "Shorts",
   },
   {
     Icon: IconHome,
@@ -60,5 +84,27 @@ const listSideBar = [
     title: "Trang chủ",
   },
 ];
-
 </script>
+<style>
+.scrollbox::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0px;
+}
+
+.scrollbox:hover::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbox:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+@media (hover: none) {
+  .scrollbox::-webkit-scrollbar {
+    width: 8px;
+  }
+  .scrollbox::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+</style>
