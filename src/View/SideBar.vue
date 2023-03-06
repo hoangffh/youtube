@@ -6,6 +6,10 @@
       class="w-full px-4 hover:rounded-md hover:bg-slate-200 hover:font-bold cursor-pointer"
       v-for="item in listSideBar"
       :key="item"
+      :class="
+        isMenuNavBarActive === item.link ? 'bg-slate-200 rounded-md ' : ''
+      "
+      @click="handleToView(item?.link)"
     >
       <BaseIItemSIdebar :item="item"></BaseIItemSIdebar>
     </div>
@@ -14,14 +18,19 @@
 <script setup>
 import BaseIItemSIdebar from "@/components/Base/BaseIItemSIdebar.vue";
 import IconHome from "@/assets/icon/IconHome.svg";
+import router from "@/router";
+import { URI } from "@/Container/data";
+import { ref } from "vue";
 const listSideBar = [
   {
     Icon: IconHome,
     title: "Trang chủ",
+    link: URI.home,
   },
   {
     Icon: IconHome,
     title: "Shorts",
+    link: URI.shorts,
   },
   {
     Icon: IconHome,
@@ -84,6 +93,13 @@ const listSideBar = [
     title: "Trang chủ",
   },
 ];
+const isMenuNavBarActive = ref(null);
+const handleToView = (item) => {
+  isMenuNavBarActive.value = item;
+  router.push({
+    path: item,
+  });
+};
 </script>
 <style>
 .scrollbox::-webkit-scrollbar {
