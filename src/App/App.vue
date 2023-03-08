@@ -3,8 +3,8 @@
     class="box-border w-full h-full m-0 transition-position pt-[65px] bg-white"
   >
     <HeaderYoutobe></HeaderYoutobe>
-    <div class="flex w-full">
-      <SideBar></SideBar>
+    <div class="flex w-full pr-4">
+      <SideBar class="container"></SideBar>
       <ContainerYoutube></ContainerYoutube>
     </div>
   </div>

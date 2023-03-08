@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-0 inset-x-0 z-30 transition-position w-full h-[56px] flex items-center px-6 justify-between gap-10"
+    class="fixed top-0 inset-x-0 z-30 transition-position w-full h-[56px] flex items-center px-6 justify-between"
   >
     <div class="flex items-center gap-6 w-1/4">
       <IconMenu class="w-6 h-6"></IconMenu>
@@ -13,7 +13,7 @@
         >
       </div>
     </div>
-    <div class="flex items-center gap-4 w-2/4">
+    <div class="flex items-center gap-4 lg:w-[728px]">
       <BaseInput type="text" placeholder="Search" v-model="search"></BaseInput>
       <IconMicro class="w-6 h-6"></IconMicro>
     </div>
@@ -25,11 +25,18 @@
   </div>
 </template>
 <script setup>
-import { IconMenu, IconYoutube ,IconMicro ,IconUser , IconVideo , IconBell} from "@/assets/icon/index";
+import {
+  IconMenu,
+  IconYoutube,
+  IconMicro,
+  IconUser,
+  IconVideo,
+  IconBell,
+} from "@/assets/icon/index";
 import BaseInput from "@/components/Base/BaseInput.vue";
 </script>
 <style scoped>
-.font-base{
+.font-base {
   font-family: Youtube Bold;
 }
 </style>

@@ -5,3 +5,4 @@ export { default as IconMicro } from "./IconMicro.vue";
 export { default as IconBell } from "./IconBell.vue";
 export { default as IconVideo } from "./IconVideo.vue";
 export { default as IconUser } from "./IconUser.vue";
+export { default as IconNext } from "./IconNext.vue";

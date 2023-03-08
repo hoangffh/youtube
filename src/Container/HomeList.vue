@@ -1,75 +1,118 @@
 <template>
-  <div class="flex items-center gap-2 overflow-x-auto">
+  <div class="flex w-full pt-[32px] items-center flex-col">
     <div
-      class="flex items-center justify-center h-[32px] w-full bg-gray-light hover:bg-gray-200 rounded-lg cursor-pointer"
-      v-for="item in listItem"
-      :key="item"
+      class="flex items-center gap-2 w-full fixed h-[32px] top-[65px] inset-x-0 z-30 translate-x-[225px]"
     >
-      <span class="text-base text-black">{{ item.title }}</span>
+      <div
+        @click="handlePrev"
+        class="w-8 h-8 bg-white flex items-center justify-center rounded-full hover:bg-gray-100"
+      >
+        <IconNext class="w-4 h-4 rotate-180"></IconNext>
+      </div>
+      <div
+        class="flex items-center justify-center h-[32px] bg-gray-100 rounded-lg cursor-pointer px-4"
+        :class="
+          title == item.title
+            ? 'bg-black text-white hover:bg-black'
+            : 'text-black hover:bg-gray-200'
+        "
+        v-for="item in listItem"
+        :key="item"
+        @click="handleFilter(item)"
+      >
+        <span class="text-base">{{ item.title }}</span>
+      </div>
+      <div
+        @click="handleNext"
+        class="w-8 h-8 bg-white flex items-center justify-center rounded-full hover:bg-gray-100"
+      >
+        <IconNext class="w-4 h-4"></IconNext>
+      </div>
     </div>
   </div>
 </template>
 <script setup>
+import { ref, onMounted } from "vue";
+import { IconNext } from "@/assets/icon";
 const listItem = [
   {
     title: "All",
   },
   {
-    title: "All",
+    title: "Violon",
   },
   {
-    title: "All",
+    title: "Mixes",
   },
   {
-    title: "All",
+    title: "Youth music",
   },
   {
-    title: "All",
+    title: "Live",
   },
   {
-    title: "All",
+    title: "Music",
   },
   {
-    title: "All",
+    title: "Football",
   },
   {
-    title: "All",
+    title: "Soccer",
   },
   {
-    title: "All",
+    title: "Anime",
   },
   {
-    title: "All",
+    title: "Film",
   },
   {
-    title: "All",
+    title: "Attack on Titan",
   },
   {
-    title: "All",
+    title: "Fifa",
   },
   {
-    title: "All",
+    title: "Dream",
   },
   {
-    title: "All",
+    title: "Cakes",
   },
   {
-    title: "All",
+    title: "Coockies",
   },
   {
-    title: "All",
+    title: "Apple",
   },
   {
-    title: "All",
-  },
-  {
-    title: "All",
-  },
-  {
-    title: "wewfwewefwefwef",
-  },
-  {
-    title: "Allasfqweqwefwefewf",
+    title: "Laptop",
   },
 ];
+const title = ref();
+const handleFilter = (item) => {
+  title.value = item.title;
+};
+const handleNext = () => {
+  var index = checkIndex();
+  if (index == listItem.length - 1) {
+    index = 0;
+    title.value = listItem[index].title;
+  } else title.value = listItem[index + 1].title;
+};
+const handlePrev = () => {
+  var index = checkIndex();
+  if (index == 0) {
+    index = listItem.length - 1;
+    title.value = listItem[index].title;
+  } else title.value = listItem[index - 1].title;
+};
+const checkIndex = () => {
+  const value = listItem.filter((item) => {
+    return item.title === title.value;
+  });
+  var index = listItem.indexOf(value[0]);
+  return index;
+};
+onMounted(() => {
+  title.value = listItem[0].title;
+});
 </script>

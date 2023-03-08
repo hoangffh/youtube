@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-h-[calc(100vh-70px)] overflow-y-scroll flex flex-col items-center w-[224px] pl-2 pr-4 scrollbox"
+    class="max-h-[calc(100vh-65px)] overflow-y-scroll flex flex-col items-center w-[224px] pl-2 pr-4 scrollbox"
   >
     <div
       class="w-full px-4 hover:rounded-md hover:bg-slate-200 hover:font-bold cursor-pointer"
