@@ -1,7 +1,7 @@
 <template>
-  <div class="flex w-full pt-[32px] items-center flex-col">
+  <div class="flex w-full pt-[32px] items-center flex-col px-4">
     <div
-      class="flex items-center gap-2 w-full fixed h-[32px] top-[65px] inset-x-0 z-30 translate-x-[225px]"
+      class="flex items-center gap-2 w-full fixed h-[32px] top-[65px] inset-x-0 z-30 translate-x-[225px] overflow-hidden"
     >
       <div
         @click="handlePrev"
@@ -10,11 +10,11 @@
         <IconNext class="w-4 h-4 rotate-180"></IconNext>
       </div>
       <div
-        class="flex items-center justify-center h-[32px] bg-gray-100 rounded-lg cursor-pointer px-4"
+        class="text-center leading-[32px] h-[32px] lg:px-4 px-2 rounded-lg cursor-pointer"
         :class="
-          title == item.title
+          title === item.title
             ? 'bg-black text-white hover:bg-black'
-            : 'text-black hover:bg-gray-200'
+            : 'text-black hover:bg-gray-200 bg-gray-100'
         "
         v-for="item in listItem"
         :key="item"

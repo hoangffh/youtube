@@ -2,20 +2,30 @@
   <div
     class="max-h-[calc(100vh-65px)] overflow-y-scroll flex flex-col items-center w-[224px] pl-2 pr-4 scrollbox"
   >
-    <div
-      class="w-full px-4 hover:rounded-md hover:bg-slate-200 hover:font-bold cursor-pointer"
+    <a-tooltip
+      placement="bottomRight"
       v-for="item in listSideBar"
       :key="item"
-      :class="
-        isMenuNavBarActive === item.link ? 'bg-slate-200 rounded-md ' : ''
-      "
-      @click="handleToView(item?.link)"
+      :title="item.title"
     >
-      <BaseIItemSIdebar :item="item"></BaseIItemSIdebar>
-    </div>
+      <div
+        class="w-full px-4 hover:rounded-md hover:bg-slate-200 hover:font-bold cursor-pointer"
+        :class="
+          isMenuNavBarActive === item.link ? 'bg-slate-200 rounded-md ' : ''
+        "
+        @click="handleToView(item?.link)"
+      >
+        <BaseIItemSIdebar :item="item"></BaseIItemSIdebar>
+      </div>
+    </a-tooltip>
+    <a-tooltip title="Button">
+      <Button>Add</Button>
+    </a-tooltip>
+    <message></message>
   </div>
 </template>
 <script setup>
+import { Button, message } from "ant-design-vue";
 import BaseIItemSIdebar from "@/components/Base/BaseIItemSIdebar.vue";
 import IconHome from "@/assets/icon/IconHome.svg";
 import router from "@/router";
