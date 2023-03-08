@@ -13,9 +13,12 @@
     >
       <BaseIItemSIdebar :item="item"></BaseIItemSIdebar>
     </div>
+    <Button disabled>Add</Button>
+    <message></message>
   </div>
 </template>
 <script setup>
+import { Button, message } from 'ant-design-vue';
 import BaseIItemSIdebar from "@/components/Base/BaseIItemSIdebar.vue";
 import IconHome from "@/assets/icon/IconHome.svg";
 import router from "@/router";
